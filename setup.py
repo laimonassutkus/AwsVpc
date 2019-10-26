@@ -8,7 +8,7 @@ with open('HISTORY.md') as history_file:
 
 setup(
     name='aws_vpc',
-    version='1.0.0',
+    version='1.0.1',
     packages=find_packages(),
     description=(
         'Infrastructure-as-a-code project which creates a highly opinionated VPC for '

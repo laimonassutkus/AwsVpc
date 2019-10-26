@@ -90,6 +90,8 @@ class VpcTemplate:
     def get_template(self) -> Template:
         template = Template()
 
+        template.add_resource(self.__vpc)
+
         template.add_resource(self.__isolated_table)
         template.add_resource(self.__private_table)
         template.add_resource(self.__public_table)
