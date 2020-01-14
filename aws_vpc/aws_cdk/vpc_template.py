@@ -1,10 +1,8 @@
-from aws_cdk import (
-    aws_ec2 as ec2,
-    core
-)
+from aws_cdk import aws_ec2 as ec2, core
+from aws_cdk.aws_cloudformation import NestedStack
 
 
-class VpcTemplate(core.Stack):
+class VpcTemplate(NestedStack):
     """
     Template class which creates a highly opinionated VPC structure.
     """
@@ -20,7 +18,7 @@ class VpcTemplate(core.Stack):
         """
         stack_name = prefix + self.STACK_NAME_SUFFIX
 
-        super().__init__(scope, stack_name, **kwargs)
+        super().__init__(scope=scope, id=stack_name, **kwargs)
 
         self.__vpc = ec2.Vpc(
             self,
